@@ -14,7 +14,7 @@ int _printf(const char *format, ...)
 	char *s;
 
 	va_start(p, format);
-	if (!formt[i] || !format)
+	if (!format[0] || !format)
 		return (-1);
 	while (format[i])
 	{
