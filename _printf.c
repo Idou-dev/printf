@@ -11,7 +11,7 @@ int _printf(const char *format, ...)
 	int i = 0, n = 0;
 	char *s;
 
-	if (!format || !format[0])
+	if (!format)
 		return (-1);
 	va_start(p, format);
 	while (format[i])
@@ -35,6 +35,9 @@ int _printf(const char *format, ...)
 				case '%':
 					_putchar('%');
 					n++;
+					break;
+				default :
+					_putchar(format[i]);
 					break;
 			}
 		}
