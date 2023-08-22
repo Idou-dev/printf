@@ -7,8 +7,7 @@
  */
 int _printf(const char *format, ...)
 {
-	va_list p;
-	int i = 0, n = 0;
+	va_list p; int i = 0, n = 0;
 	char *s;
 
 	if (!format)
@@ -29,15 +28,19 @@ int _printf(const char *format, ...)
 					break;
 				case 's':
 					s = va_arg(p, char *);
+					if (s == NULL)
+					{
+						s = "(null)";
+						write(1, s, _strlen(s));
+						n += _strlen(s);
+						return (n);
+					}
 					write(1, s, _strlen(s));
 					n += _strlen(s);
 					break;
 				case '%':
 					_putchar('%');
 					n++;
-					break;
-				default :
-					_putchar(format[i]);
 					break;
 			}
 		}
