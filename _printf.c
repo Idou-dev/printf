@@ -29,8 +29,7 @@ int _printf(const char *format, ...)
 					break;
 				case 's':
 					s = va_arg(p, char *);
-					write(1, s, _strlen(s));
-					n += _strlen(s);
+					n += handle_str(s);
 					break;
 				case '%':
 					_putchar('%');
