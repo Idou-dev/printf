@@ -1,19 +1,17 @@
 #include "main.h"
-#include <stdarg.h>
 
 /**
  * _printf - produces output according to a format
  * @format: format type
  * Return: the number of characters printed
  */
-
 int _printf(const char *format, ...)
 {
 	va_list p;
 	int i = 0, n = 0;
 	char *s;
 
-	if (!format)
+	if (!format || !format[0])
 		return (-1);
 	va_start(p, format);
 	while (format[i])
