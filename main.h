@@ -9,5 +9,6 @@ int _printf(const char *format, ...);
 int _putchar(char c);
 int _strlen(char *str);
 int handle_str(char *str);
+int print_int (va_list p, ...);
 
 #endif
