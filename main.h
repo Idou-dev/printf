@@ -5,6 +5,8 @@
 #include <stdarg.h>
 #include <unistd.h>
 
+#define BUFF 1024;
+
 int _printf(const char *format, ...);
 int _putchar(char c);
 int _strlen(char *str);
