@@ -21,8 +21,6 @@ int _printf(const char *format, ...)
 			i++;
 			switch (format[i])
 			{
-				case '\0':
-					break;
 				case 'c':
 					_putchar(va_arg(p, int));
 					n++;
@@ -34,6 +32,9 @@ int _printf(const char *format, ...)
 				case '%':
 					_putchar('%');
 					n++;
+					break;
+				default:
+					_putchar(format[i]);
 					break;
 			}
 		}
